@@ -1,4 +1,4 @@
-import { calculateHand } from "./handUtils";
+import { calculateHand, checkLose } from "./handUtils";
 
 describe("calculateHand", () => {
   test("returns 0 if hand is empty", () => {
@@ -28,7 +28,7 @@ describe("calculateHand", () => {
     expect(score).toBe(40);
   });
 
-  test("returns accurate score with ace card", () => {
+  test("returns accurate score with ace card as 11", () => {
     const hand = [
       { suit: "spades", name: "4", value: 4 },
       { suit: "diamonds", name: "ace", value: 11 },
@@ -54,5 +54,17 @@ describe("calculateHand", () => {
     ];
     const score = calculateHand(hand);
     expect(score).toBe(12);
+  });
+});
+
+describe("checkLose", () => {
+  test("returns true if hand value is over 21", () => {
+    expect(checkLose(22)).toBe(true);
+  });
+
+  test("returns false if hand value is 21 or under", () => {
+    expect(checkLose(21)).toBe(false);
+    expect(checkLose(1)).toBe(false);
+    expect(checkLose(0)).toBe(false);
   });
 });

@@ -15,3 +15,8 @@ export const calculateHand = (hand) => {
   }
   return score;
 };
+
+export const checkLose = (score) => {
+  if (score > 21) return true;
+  return false;
+};
