@@ -8,7 +8,13 @@ export const Controls = ({
   startGameHandler,
 }) => {
   return (
-    <Stack spacing={2} direction="row">
+    <Stack
+      spacing={2}
+      direction="row"
+      display="flex"
+      alignItems="center"
+      justifyContent="center"
+    >
       {!gameRunning ? (
         <Button variant="contained" onClick={startGameHandler}>
           Start Game
