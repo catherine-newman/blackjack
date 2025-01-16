@@ -12,6 +12,7 @@ export const DeckCard = ({ card }) => {
         alignItems: "center",
         justifyContent: "center",
       }}
+      data-testid="deck-card"
     >
       <CardContent>
         <Typography align="center">{`${card.name} of ${card.suit}`}</Typography>

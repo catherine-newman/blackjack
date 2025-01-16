@@ -47,13 +47,32 @@ describe("calculateHand", () => {
     expect(score).toBe(13);
   });
 
-  test("handles multiple ace cards", () => {
+  test("handles multiple ace cards with both values of 1 and 11", () => {
     const hand = [
       { suit: "hearts", name: "ace", value: 11 },
       { suit: "diamonds", name: "ace", value: 11 },
     ];
     const score = calculateHand(hand);
     expect(score).toBe(12);
+  });
+
+  test("handles score of 21 with ace and 1 face card", () => {
+    const hand = [
+      { suit: "hearts", name: "ace", value: 11 },
+      { suit: "diamonds", name: "jack", value: 10 },
+    ];
+    const score = calculateHand(hand);
+    expect(score).toBe(21);
+  });
+
+  test("handles score of 21 with ace and 2 face cards", () => {
+    const hand = [
+      { suit: "hearts", name: "ace", value: 11 },
+      { suit: "diamonds", name: "jack", value: 10 },
+      { suit: "diamonds", name: "queen", value: 10 },
+    ];
+    const score = calculateHand(hand);
+    expect(score).toBe(21);
   });
 });
 

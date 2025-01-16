@@ -1,8 +1,9 @@
 import Stack from "@mui/material/Stack";
 import Button from "@mui/material/Button";
+import { GAME_STATE } from "../constants/game";
 
 export const Controls = ({
-  gameRunning,
+  gameState,
   hitHandler,
   standHandler,
   startGameHandler,
@@ -15,7 +16,7 @@ export const Controls = ({
       alignItems="center"
       justifyContent="center"
     >
-      {!gameRunning ? (
+      {gameState !== GAME_STATE.RUNNING ? (
         <Button variant="contained" onClick={startGameHandler}>
           Start Game
         </Button>
