@@ -1,4 +1,5 @@
 export const calculateHand = (hand) => {
+  if (!hand.length) return 0;
   let score = 0;
   let aceCount = 0;
 

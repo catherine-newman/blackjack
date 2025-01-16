@@ -29,6 +29,19 @@ describe("generateDeck", () => {
       expect(count).toBe(13);
     });
   });
+
+  test("generates a deck with each suit adding up to a value of 95", () => {
+    const deck = generateDeck();
+
+    const suitValues = { hearts: 0, diamonds: 0, spades: 0, clubs: 0 };
+
+    deck.forEach((card) => {
+      suitValues[card.suit] += card.value;
+    });
+    Object.values(suitValues).forEach((value) => {
+      expect(value).toBe(95);
+    });
+  });
 });
 
 describe("drawCard", () => {
