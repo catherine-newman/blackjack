@@ -42,6 +42,19 @@ describe("generateDeck", () => {
       expect(value).toBe(95);
     });
   });
+
+  test("generates a deck with 4 of each type of card", () => {
+    const deck = generateDeck();
+
+    const cardNameCounts = {};
+
+    deck.forEach((card) => {
+      cardNameCounts[card.name] = (cardNameCounts[card.name] || 0) + 1;
+    });
+    Object.values(cardNameCounts).forEach((count) => {
+      expect(count).toBe(4);
+    });
+  });
 });
 
 describe("drawCard", () => {
