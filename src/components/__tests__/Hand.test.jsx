@@ -1,4 +1,4 @@
-import { Hand } from "./Hand";
+import { Hand } from "../Hand";
 import { render, screen } from "@testing-library/react";
 
 describe("Hand", () => {

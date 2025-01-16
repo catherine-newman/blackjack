@@ -1,4 +1,4 @@
-import { DeckCard } from "./DeckCard";
+import { DeckCard } from "../DeckCard";
 import { render, screen } from "@testing-library/react";
 
 describe("DeckCard", () => {

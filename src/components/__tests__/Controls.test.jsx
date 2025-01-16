@@ -1,5 +1,4 @@
-import { expect } from "vitest";
-import { Controls } from "./Controls";
+import { Controls } from "../Controls";
 import { render, screen } from "@testing-library/react";
 
 describe("Controls", () => {
